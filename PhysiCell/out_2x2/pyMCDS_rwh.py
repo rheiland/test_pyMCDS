@@ -105,19 +105,26 @@ class pyMCDS:
             spatial measurements
         """
         centers = self.get_linear_voxels()
+        print("get_mesh_spacing: centers= ",centers)
         X = np.unique(centers[0, :])
         Y = np.unique(centers[1, :])
         Z = np.unique(centers[2, :])
 
-        # print("get_mesh_spacing: X= ",X,", X.shape=",X.shape)
+        print("get_mesh_spacing: X= ",X,", X.shape=",X.shape)
+        print("get_mesh_spacing: Y= ",Y,", Y.shape=",Y.shape)
 
         # rwh - fix!
         # dx = (X.max() - X.min()) / X.shape[0]
         # dy = (Y.max() - Y.min()) / Y.shape[0]
         # dz = (Z.max() - Z.min()) / Z.shape[0]
+        print("get_mesh_spacing: Z= ",Z,", Z.shape=",Z.shape, Z.shape[0])
+        print("get_mesh_spacing: X.max= ",X.max(),", X.min=",X.min())
+        print("get_mesh_spacing: Y.max= ",Y.max(),", Y.min=",Y.min())
+        print("get_mesh_spacing: Z.max= ",Z.max(),", Z.min=",Z.min())
         dx = (X.max() - X.min()) / (X.shape[0] - 1)
         dy = (Y.max() - Y.min()) / (Y.shape[0] - 1)
         dz = (Z.max() - Z.min()) / (Z.shape[0] - 1)
+        print("get_mesh_spacing: dx,dy,dz= ",dx,dy,dz)
         
         # rwh: argh - assuming uniform mesh, not rectilinear
         if np.abs(dx - dy) > 1e-10 or np.abs(dy - dz) > 1e-10 \
