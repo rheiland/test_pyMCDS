@@ -1,0 +1,6 @@
+# bue 20221111: python cache files
+__pycache__/
+
+# bue 20221111: compiled PhysiCell file
+PhysiCell/*.o
+PhysiCell/test_pymcds
