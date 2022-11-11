@@ -1,5 +1,10 @@
 # test_pyMCDS
 
+Background:
+* [Mesh grid, cell location visualization - google doc](https://docs.google.com/document/d/1_YDrJGfflNe3pF4ch_ni16YvJWz_jemWJLShSqsymlw/edit?usp=sharing)
+* http://www.mathcancer.org/blog/python-loader/
+* http://www.mathcancer.org/blog/working-with-physicell-snapshots-in-matlab/
+
 Clone this repo. Then in a Unix-based shell (although, note below that the repo is pre-populated with the output in /out_2x2):
 ```
 cd test_pyMCDS/PhysiCell
@@ -23,7 +28,7 @@ What's in the `initial.xml` file? Some relevant info is the following:
      <z_coordinates delimiter=" ">0.000000</z_coordinates>
 ```
 
-If we try to use pyMCDS from the pip installed pcDataLoader to get the substrate concentration at (-10,-10,0), i.e., the center of the lower-left voxel, we get a runtime error.
+If we try to use pyMCDS from the pip installed pcDataLoader to get the substrate concentration at (-10,-10,0), i.e., the center of the lower-left voxel, we get a runtime warning.
 ```
 In [2]: from pcDataLoader import pyMCDS
 
@@ -40,6 +45,7 @@ In [6]: cval = mcds.get_concentrations_at(x=-10, y=-10, z=0)
 /Users/heiland/anaconda3_x86/lib/python3.9/site-packages/pcDataLoader/pyMCDS.py:112: RuntimeWarning: invalid value encountered in double_scalars
   dz = (Z.max() - Z.min()) / (Z.shape[0] - 1)
 ```
+The reason for the runtime warning is because we're dividing by 0 which is never a good thing to do. The reason we're dividing by 0 hints at the confusion of this long-running, confusing, messy, headachy, time-wasting issue. Incredibly, there's still the question of whether or not we even want to fix it.
 
 And if we try to use an experimental module, pyMCDS_rwh.py (copy from the root dir into /out_2x2), we get the expected voxel concentration value:
 ```
