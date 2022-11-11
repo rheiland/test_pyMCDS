@@ -82,3 +82,21 @@ To make plotting easier, just copy the `plot_pyMCDS_substrate2D.py` from the roo
 
 NOTE: the axes' ranges are different: the left (contourf) uses the voxel centers for its ranges; the right (pcolormesh) uses the actual domain boundary. Each technique uses the same 4 values (voxel concentrations): 40,41,42,43.
 
+----
+Side note, unrelated to pyMCDS. The Matlab interface is currently broken (in 1.10.4) due to new info written to the .xml:
+```
+>> pwd
+ans =
+    '/Users/heiland/git/test_pyMCDS/PhysiCell/matlab'
+
+>> MCDS = read_MultiCellDS_xml('output00000000.xml','../out_2x2')
+Unrecognized field name "basic_agents".
+
+Error in read_MultiCellDS_xml (line 415)
+                MAT = MAT.basic_agents; % use this instead of struct2array for better octave compatibility
+ 
+>> 
+
+Due to 	this in BioFVM_MultiCellDS.cpp
+FILE* fp = write_matlab_header( size_of_each_datum, number_of_data_entries,  filename, "basic_agents" );
+```
