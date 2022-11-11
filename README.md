@@ -74,4 +74,4 @@ Error in read_MultiCellDS_xml (line 415)
 
 What happens if we try to plot output, using the current version of the Studio?
 
-![](images/studio_plot1.png)
+![](images/studio_plot1_med.png)
