@@ -1,7 +1,7 @@
 # test_pyMCDS
 
 Background:
-* [Mesh grid, cell location visualization - google doc](https://docs.google.com/document/d/1_YDrJGfflNe3pF4ch_ni16YvJWz_jemWJLShSqsymlw/edit?usp=sharing)
+* [Mesh grid, cell location visualization )](https://docs.google.com/document/d/1_YDrJGfflNe3pF4ch_ni16YvJWz_jemWJLShSqsymlw/edit?usp=sharing) - google doc (circa 2020)
 * http://www.mathcancer.org/blog/python-loader/
 * http://www.mathcancer.org/blog/working-with-physicell-snapshots-in-matlab/
 
@@ -74,4 +74,4 @@ Error in read_MultiCellDS_xml (line 415)
 
 What happens if we try to plot output, using the current version of the Studio?
 
-![](images/studio_plot1_med.png)
+![](images/studio1.png)
