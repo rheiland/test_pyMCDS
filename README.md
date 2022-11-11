@@ -62,3 +62,12 @@ get_concentrations_at(): i,j,k= 0 0 0
 get_concentrations_at(): concs[ix]= 40.0
 Out[3]: array([40.])
 ```
+
+Fun side note: our Matlab interface is now broken due to updates in our .xml output:
+```
+>> MCDS = read_MultiCellDS_xml('output00000000.xml','../out_2x2')
+Unrecognized field name "basic_agents".
+
+Error in read_MultiCellDS_xml (line 415)
+                MAT = MAT.basic_agents; % use this instead of struct2array for better octave compatibility
+```
