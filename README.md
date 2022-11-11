@@ -71,3 +71,7 @@ Unrecognized field name "basic_agents".
 Error in read_MultiCellDS_xml (line 415)
                 MAT = MAT.basic_agents; % use this instead of struct2array for better octave compatibility
 ```
+
+What happens if we try to plot output, using the current version of the Studio?
+
+![](images/studio_plot1.png)
