@@ -75,3 +75,10 @@ Error in read_MultiCellDS_xml (line 415)
 What happens if we try to plot output, using the current version of the Studio?
 
 ![](images/studio1.png)
+
+To make plotting easier, just copy the `plot_pyMCDS_substrate2D.py` from the root directory into the output directory and try using it to compare the matplotlib contourf vs. pcolormesh. NOTE: this plotting module will import a pyMCDS module - choose whatever one you are currently testing.
+
+![](images/contourf_vs_pcolormesh.png)
+
+NOTE: the axes' ranges are different: the left (contourf) uses the voxel centers for its ranges; the right (pcolormesh) uses the actual domain boundary. Each technique uses the same 4 values (voxel concentrations): 40,41,42,43.
+
