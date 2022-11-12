@@ -83,6 +83,11 @@ To make plotting easier, just copy the `plot_pyMCDS_substrate2D.py` from the roo
 NOTE: the axes' ranges are different: the left (contourf) uses the voxel centers for its ranges; the right (pcolormesh) uses the actual domain boundary. Each technique uses the same 4 values (voxel concentrations): 40,41,42,43.
 
 ----
+Now compare with a more realistic sized domain, e.g., [-400,400], with a 40x40 voxel mesh. If we use `pcolormesh` to plot, we can choose to do either a `flat` shading or `gouraud` (smooth). Note that the smooth shaded version results in an empty space at the border (space between the center of the boundary voxel and the boundary). This is what we also see using the `contourf` function to do the plotting.
+
+![](images/pcolor_flat_vs_gouraud_40x40.png)
+
+----
 Side note, unrelated to pyMCDS. The Matlab interface is currently broken (in 1.10.4) due to new info written to the .xml:
 ```
 >> pwd
